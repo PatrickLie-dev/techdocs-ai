@@ -1,0 +1,25 @@
+# requirements.txt
+
+# LangChain core
+langchain==0.3.25
+langchain-community==0.3.23
+langchain-chroma==0.1.4
+langchain-groq==0.3.2
+langchain-huggingface==0.1.2
+
+# Vector DB
+chromadb==0.6.3
+
+# Document loaders
+pypdf==5.4.0
+
+# Embedding model (local, gratis)
+sentence-transformers==4.1.0
+
+# API
+flask==3.1.1
+flask-cors==5.0.1
+python-dotenv==1.1.0
+
+# Utilities
+pydantic==2.11.3

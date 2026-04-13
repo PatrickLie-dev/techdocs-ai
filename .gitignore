@@ -1,0 +1,27 @@
+# Environment
+.env
+
+# Virtual environment
+venv/
+.venv/
+
+# Vector database (generated, re-buildable via indexer.py)
+chroma_db/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# HuggingFace model cache
+.cache/
