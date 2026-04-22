@@ -98,18 +98,24 @@ def list_docs():
 # App startup
 # ---------------------------------------------------------------------------
 
-if __name__ == "__main__":
+def initialize_pipeline():
+    """Initialize pipeline — called at startup regardless of run mode."""
+    global pipeline
     logger.info("Initializing RAG pipeline...")
     try:
         pipeline = get_pipeline()
+        logger.info("Pipeline initialized successfully.")
     except ValueError as e:
         logger.error(f"Failed to initialize pipeline: {e}")
-        logger.error("Make sure you have run: python src/indexer.py")
-        sys.exit(1)
+        logger.error("Make sure you have run: python src/indexer.py first")
+        # Tidak sys.exit() — biarkan app tetap jalan, health endpoint akan return 503
 
+# Initialize saat module di-import (works dengan gunicorn)
+initialize_pipeline()
+
+if __name__ == "__main__":
     host = os.getenv("FLASK_HOST", "0.0.0.0")
     port = int(os.getenv("FLASK_PORT", "5000"))
     debug = os.getenv("FLASK_DEBUG", "false").lower() == "true"
-
     logger.info(f"Starting Flask on {host}:{port} (debug={debug})")
     app.run(host=host, port=port, debug=debug)
