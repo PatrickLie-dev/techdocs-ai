@@ -1,16 +1,17 @@
-# Dockerfile — TechDocs AI (optimized for Railway free tier)
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# System dependencies minimal
 RUN apt-get update && apt-get install -y \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+# Install torch CPU only DULU (lebih kecil ~200MB vs ~2GB GPU version)
+RUN pip install --no-cache-dir \
+    torch==2.1.0+cpu \
+    --index-url https://download.pytorch.org/whl/cpu
 
-# Install dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir gunicorn==21.2.0
 
