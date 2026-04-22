@@ -5,8 +5,6 @@
 venv/
 .venv/
 
-# Vector database (generated, re-buildable via indexer.py)
-chroma_db/
 
 # Python cache
 __pycache__/
