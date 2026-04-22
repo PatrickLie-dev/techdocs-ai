@@ -119,3 +119,16 @@ if __name__ == "__main__":
     debug = os.getenv("FLASK_DEBUG", "false").lower() == "true"
     logger.info(f"Starting Flask on {host}:{port} (debug={debug})")
     app.run(host=host, port=port, debug=debug)
+
+
+@app.get("/")
+def index():
+    return jsonify({
+        "service": "TechDocs AI",
+        "status": "running",
+        "endpoints": {
+            "health": "/api/health",
+            "chat": "/api/chat (POST)",
+            "docs": "/api/docs"
+        }
+    }), 200
