@@ -1,10 +1,12 @@
 venv/
 __pycache__/
 *.pyc
-*.pyo
 .env
 .git
-chroma_db/
 *.log
 -p/
 tests/
+documents/
+*.pdf
+*.txt
+*.md

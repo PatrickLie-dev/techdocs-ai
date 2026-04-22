@@ -1,18 +1,17 @@
 # requirements.txt
-# LangChain core
 langchain==0.3.25
 langchain-community==0.3.23
 langchain-chroma==0.1.4
 langchain-groq==0.3.2
 langchain-huggingface==0.1.2
 
-# Vector DB — versi diatur oleh langchain-chroma
+# Vector DB
 chromadb>=0.4.0,<0.6.0
 
 # Document loaders
 pypdf==5.4.0
 
-# Embedding model (local, gratis)
+# Embedding — pakai torch CPU only untuk lebih ringan
 sentence-transformers==4.1.0
 
 # API
@@ -22,6 +21,4 @@ python-dotenv==1.1.0
 
 # Utilities
 pydantic==2.11.3
-
-# Production server
 gunicorn==21.2.0
