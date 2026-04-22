@@ -8,5 +8,3 @@ __pycache__/
 tests/
 documents/
 *.pdf
-*.txt
-*.md
