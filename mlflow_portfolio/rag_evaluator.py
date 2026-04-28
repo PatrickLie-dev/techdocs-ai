@@ -20,7 +20,7 @@ from typing import Optional
 # ── Config ─────────────────────────────────────────────────────────────────────
 MLFLOW_TRACKING_URI = os.getenv(
     "MLFLOW_TRACKING_URI",
-    r"C:\Users\ASUS\mlflow_portfolio\mlruns"
+    "./mlruns"
 )
 EXPERIMENT_NAME     = "TechDocs-RAG-Evaluation"
 TECHDOCS_URL        = os.getenv(
