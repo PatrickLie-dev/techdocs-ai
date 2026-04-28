@@ -186,8 +186,6 @@ python -m mlflow ui --port 5001  # view results at http://127.0.0.1:5001
 
 ## Screenshots
 
-> _Add screenshots here after running the app._
-
 **MLflow Evaluation Dashboard**
 <!-- ![MLflow UI](screenshots/mlflow-dashboard.png) -->
 
